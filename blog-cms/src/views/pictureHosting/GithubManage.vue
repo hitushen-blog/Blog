@@ -248,7 +248,6 @@
 
 				upload(this.userInfo.login, this.activeRepos, path, fileName, requestData).then(() => {
 					this.msgSuccess('上传成功')
-					data.onSuccess()
 				})
 			},
 		},
