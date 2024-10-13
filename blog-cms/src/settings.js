@@ -3,7 +3,7 @@ module.exports = {
 	 * @type {string}
 	 * @description page title
 	 */
-	title: 'Naccl\'s Blog Admin',
+	title: 'Hitushen Blog Admin',
 
 	/**
 	 * @type {string}
