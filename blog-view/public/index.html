@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
-	<title>NBlog</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>HBlog</title>
     <link rel="stylesheet" href="<%= BASE_URL %>lib/css/prism.css">
-	<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+
+    <meta name="description"  content="本博客专注于Java和前端开发教程，涵盖基础到进阶知识，提供实战案例和行业动态。适合初学者和进阶开发者，助你快速掌握编程技能！">
+    <meta name="keywords"  content="Java教程, 前端开发, 编程基础, 实战案例, 行业动态, JavaScript编程, HTML5, CSS3, Web开发">
+    <meta name="author" content="申云鹏，2287674693@qq.com">
+    <meta name="robots" content="博客,前端,blog,个人博客,申云鹏,申云鹏的博客,《前端校园》,公众号,web,VUE,java,JAVA">
+
+    <meta property="og:title" content="Java与前端开发教程">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hitushen.top/">
+    <meta property="og:image" content="https://www.hitushen.top/img/avatar.jpg">
+    <meta property="og:description" content="本博客专注于Java和前端开发教程，涵盖基础到进阶知识，提供实战案例和行业动态。适合初学者和进阶开发者，助你快速掌握编程技能！">
+    <meta property="og:site_name" content="申云鹏的博客">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java与前端开发教程">
+    <meta name="twitter:description" content="本博客专注于Java和前端开发教程，涵盖基础到进阶知识，提供实战案例和行业动态。适合初学者和进阶开发者，助你快速掌握编程技能！">
+    <meta name="twitter:image" content="https://www.hitushen.top/img/avatar.jpg">
+    <meta name="twitter:site" content="@your_twitter_handle">
+
+    <meta name="copyright" content="© 2020 申云鹏的博客. All rights reserved.">
+
 </head>
 <body>
-	<noscript>
-		<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-	</noscript>
-	<div id="app"></div>
-    <script src="<%= BASE_URL %>lib/js/prism.js" data-manual></script>
-	<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script>
-    <script>
-		var meting_api='https://api.naccl.top/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
-    </script>
-	<script src="<%= BASE_URL %>lib/js/Meting.min.js"></script>
-	<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/tocbot/4.6.0/tocbot.min.js"></script>
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<script src="<%= BASE_URL %>lib/js/prism.js" data-manual></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<!--    <script>-->
+<!--		var meting_api='https://api.naccl.top/meting/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';-->
+<!--    </script>-->
+<script src="<%= BASE_URL %>lib/js/Meting.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.36.4/tocbot.js"></script>
 </body>
 </html>

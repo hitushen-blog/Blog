@@ -4,6 +4,7 @@ import 'nprogress/nprogress.css'
 
 const request = axios.create({
     baseURL: 'https://blogapi.hitushen.top/',
+    // baseURL: 'http://localhost:8090/',
     timeout: 10000,
 })
 

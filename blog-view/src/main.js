@@ -20,9 +20,10 @@ import 'viewerjs/dist/viewer.css'
 import Viewer from 'v-viewer'
 //directive
 import './util/directive'
-
+// seo优化
+import MetaInfo from 'vue-meta-info'
 console.log(
-	'%c NBlog %c By Hitushen %c https://github.com/hitushen-blog',
+	'%c HBlog %c By Hitushen %c https://github.com/hitushen-blog',
 	'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
 	'background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #000',
 	'background:transparent'
@@ -30,6 +31,7 @@ console.log(
 
 Vue.use(Element)
 Vue.use(Viewer)
+Vue.use(MetaInfo)
 
 Vue.prototype.msgSuccess = function (msg) {
 	this.$message.success(msg)

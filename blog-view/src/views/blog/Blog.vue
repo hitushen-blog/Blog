@@ -8,7 +8,7 @@
         <div class="ui grid m-margin-lr">
           <!--标题-->
           <div class="row m-padded-tb-small">
-            <h2 class="ui header m-center">{{ blog.title }}</h2>
+            <h1 class="ui header m-center">{{ blog.title }}</h1>
           </div>
           <!--文章简要信息-->
           <div class="row m-padded-tb-small">
@@ -97,13 +97,24 @@ import {getBlogById} from "@/api/blog";
 import CommentList from "@/components/comment/CommentList";
 import {mapState} from "vuex";
 import {SET_FOCUS_MODE, SET_IS_BLOG_RENDER_COMPLETE} from '@/store/mutations-types';
-import mete from "@/util/setMete"
+import tocbot from 'tocbot'
+
 
 export default {
   name: "Blog",
   components: {CommentList},
+  metaInfo() {
+    return {
+      title: this.seo.title,
+      meta: this.seo.meta
+    }
+  },
   data() {
     return {
+      seo: {
+        title: "Hitushen Blog",
+        meta:[]
+      },
       blog: {},
       bigFontSize: false,
     }
@@ -159,9 +170,15 @@ export default {
         if (res.code === 200) {
           this.blog = res.data
           // SEO 优化
-          document.title = this.blog.title + this.siteInfo.webTitleSuffix
-          // this.setMete(this.blog.title, this.siteInfo.webTitleSuffix)
-
+          console.log(res.data)
+          this.seo.title = res.data.title
+          this.seo.meta.push(...[{
+              name:"description",
+            content:res.data.description,
+          },{
+            name:"keywords",
+            content:res.data.title,
+          }])
           //v-html渲染完毕后，渲染代码块样式
           this.$nextTick(() => {
             Prism.highlightAll()
@@ -178,29 +195,7 @@ export default {
     changeFocusMode() {
       this.$store.commit(SET_FOCUS_MODE, !this.focusMode)
     },
-    setMete(title,webTitleSuffix) {
-      mete({
-        title: title + webTitleSuffix, //标题
-        titleTemplate: title + webTitleSuffix, //标题模板
-        htmlAttrs: {
-          //语言
-          lang: "en",
-          amp: true,
-        },
-        meta: [
-          {
-            //关键词
-            name: "keywords",
-            content: `${title},${webTitleSuffix},${title + webTitleSuffix}`,
-          },
-          {
-            //介绍
-            name: "description",
-            content: title,
-          },
-        ],
-      })
-    }
+
   }
 }
 </script>

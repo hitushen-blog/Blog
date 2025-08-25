@@ -12,7 +12,7 @@
 
 <script>
 	import {mapState} from 'vuex'
-
+  import tocbot from 'tocbot'
 	export default {
 		name: "Tocbot",
 		computed: {
@@ -78,9 +78,11 @@
 	}
 
 	.m-toc .toc-list {
+    height: 80vh;
+    overflow: auto;
 		list-style-type: none;
 		margin: 0;
-		padding-left: 10px
+		padding-left: 0px
 	}
 
 	.m-toc .toc-list li a {
